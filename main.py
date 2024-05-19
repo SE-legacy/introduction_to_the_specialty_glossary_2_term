@@ -17,5 +17,10 @@ with open('result.txt', 'w') as f:
         to_result.append(word)
         words.pop(word_index)
     to_result.sort()
+    first_letter = ""
     for item in to_result:
-        f.write(item)
+        if (item[0] != first_letter):
+            first_letter = item[0]
+            f.write("\n \\textbf{" + first_letter + "} \n")
+        f.write("\item {" + item[:-2] + '"---}\n')
+        first_letter = item[0].upper()
