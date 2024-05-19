@@ -16,6 +16,6 @@ with open('result.txt', 'w') as f:
         word = words[word_index]
         to_result.append(word)
         words.pop(word_index)
-    words.sort()
+    to_result.sort()
     for item in to_result:
         f.write(item)
